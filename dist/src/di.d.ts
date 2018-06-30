@@ -7,9 +7,7 @@ export interface BonbonsEntry<T> {
     token: BonbonsToken<T>;
     value: T;
 }
-export interface BonbonsTokenGenerator {
-    <T>(key: string): BonbonsToken<T>;
-}
+export declare type BonbonsTokenGenerator = <T>(key: string) => BonbonsToken<T>;
 export interface ConfigsCollection {
     get<T>(token: BonbonsToken<T>): T;
 }

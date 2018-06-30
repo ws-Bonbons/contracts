@@ -10,9 +10,7 @@ export interface BonbonsEntry<T> {
   value: T;
 }
 
-export interface BonbonsTokenGenerator {
-  <T>(key: string): BonbonsToken<T>;
-}
+export type BonbonsTokenGenerator = <T>(key: string) => BonbonsToken<T>;
 
 export interface ConfigsCollection {
   get<T>(token: BonbonsToken<T>): T;
