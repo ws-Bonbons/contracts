@@ -1,0 +1,29 @@
+{
+  "name": "@bonbons/contracts",
+  "version": "1.0.0",
+  "description": "@Bonbons/contracts",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ws-Bonbons/contracts.git"
+  },
+  "author": "bws",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ws-Bonbons/contracts/issues"
+  },
+  "homepage": "https://github.com/ws-Bonbons/contracts#readme",
+  "devDependencies": {
+    "@types/node": "^10.3.2",
+    "@types/koa": "^2.0.46",
+    "@types/koa-bodyparser": "^4.2.0",
+    "@types/koa-router": "^7.0.28",
+    "tslint": "^5.10.0",
+    "typescript": "^2.9.1",
+    "webpack": "^4.12.0",
+    "webpack-cli": "^3.0.3"
+  }
+}
