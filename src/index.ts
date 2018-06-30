@@ -6,3 +6,4 @@ export * from "./options";
 export * from "./pipe";
 export * from "./reflect";
 export * from "./source";
+export * from "./base";
