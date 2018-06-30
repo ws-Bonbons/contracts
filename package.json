@@ -18,14 +18,14 @@
   },
   "homepage": "https://github.com/ws-Bonbons/contracts#readme",
   "dependencies": {
-    "@types/koa": "^2.0.46",
-    "@types/koa-bodyparser": "^4.2.0",
-    "@types/koa-router": "^7.0.28",
     "koa": "^2.5.1",
     "koa-bodyparser": "^4.2.1",
     "koa-router": "^7.4.0"
   },
   "devDependencies": {
+    "@types/koa": "^2.0.46",
+    "@types/koa-bodyparser": "^4.2.0",
+    "@types/koa-router": "^7.0.28",
     "@types/node": "^10.3.2",
     "ts-loader": "^4.4.1",
     "tslint": "^5.10.0",
