@@ -1,4 +1,6 @@
-export var FormType;
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var FormType;
 (function (FormType) {
     FormType["MultipleFormData"] = "multiple";
     FormType["MultipleFile"] = "files";
@@ -6,5 +8,5 @@ export var FormType;
     FormType["UrlEncoded"] = "url";
     FormType["TextPlain"] = "text";
     FormType["Raw"] = "raw";
-})(FormType || (FormType = {}));
+})(FormType = exports.FormType || (exports.FormType = {}));
 //# sourceMappingURL=base.js.map
