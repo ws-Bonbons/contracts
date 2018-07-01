@@ -42,10 +42,12 @@ export interface IBonbonsContext {
   query: { [prop: string]: any };
   params: { [prop: string]: any };
   form: { [prop: string]: any };
-  get<T = any>(name: string, type?: T): T;
-  getInt(name: string): number | null;
-  getString(name: string): string | null;
-  getBool(name: string): boolean | null;
+  get(name: string, type: NumberConstructor): number | null;
+  get(name: string, type: BooleanConstructor): boolean | null;
+  get(name: string, type: StringConstructor): string | null;
+  get(name: string): string | null;
+  getNumber(name: string): number | null;
+  getBoolean(name: string): boolean | null;
   setStatus(status: number): IBonbonsContext;
   setType(type: string): IBonbonsContext;
 }
