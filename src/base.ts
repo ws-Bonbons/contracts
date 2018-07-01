@@ -38,4 +38,14 @@ export type Async<T> = Promise<T>;
 export interface IBonbonsContext {
   request: KOARequest;
   response: KOAResponse;
+  views: { [prop: string]: any };
+  query: { [prop: string]: any };
+  params: { [prop: string]: any };
+  form: { [prop: string]: any };
+  get<T = any>(name: string, type?: T): T;
+  getInt(name: string): number | null;
+  getString(name: string): string | null;
+  getBool(name: string): boolean | null;
+  setStatus(status: number): IBonbonsContext;
+  setType(type: string): IBonbonsContext;
 }
