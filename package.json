@@ -1,6 +1,6 @@
 {
   "name": "@bonbons/contracts",
-  "version": "1.0.7-beta",
+  "version": "1.0.8-beta",
   "description": "@Bonbons/contracts",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
