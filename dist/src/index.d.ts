@@ -1,9 +1,3 @@
-export * from "./controller";
-export * from "./core";
-export * from "./di";
-export * from "./injectable";
-export * from "./options";
-export * from "./pipe";
-export * from "./reflect";
-export * from "./source";
-export * from "./base";
+export * from "./public-api";
+import * as PrivateAPI from "./private-api";
+export { PrivateAPI as Contracts };
