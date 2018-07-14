@@ -1,4 +1,4 @@
-import { IConstructor, FormType, Async } from "./base";
+import { Constructor, FormType, Async } from "./base";
 import { ConfigsCollection } from "./di";
 import { BaseFormOptions } from "./options";
 import { BonbonsPipeEntry } from "./pipe";
@@ -45,7 +45,7 @@ export interface IBonbonsController {
   getConfig?(): IBonbonsControllerMetadata;
 }
 
-export type IController = IConstructor<IBonbonsController>;
+export type IController = Constructor<IBonbonsController>;
 
 export interface IMethodResult {
   type?: string;

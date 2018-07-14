@@ -1,5 +1,5 @@
 /// <reference types="koa" />
-import { IConstructor, FormType, Async } from "./base";
+import { Constructor, FormType, Async } from "./base";
 import { ConfigsCollection } from "./di";
 import { BaseFormOptions } from "./options";
 import { BonbonsPipeEntry } from "./pipe";
@@ -45,7 +45,7 @@ export interface IBonbonsController {
     __valid?: boolean;
     getConfig?(): IBonbonsControllerMetadata;
 }
-export declare type IController = IConstructor<IBonbonsController>;
+export declare type IController = Constructor<IBonbonsController>;
 export interface IMethodResult {
     type?: string;
     toString(configs: ConfigsCollection): string | Promise<string>;

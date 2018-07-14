@@ -1,7 +1,7 @@
 /// <reference types="koa" />
 import { BonbonsToken, BonbonsEntry, BonbonsConfigCollection } from "./di";
 import { KOAMiddleware } from "./source";
-import { IConstructor } from "./base";
+import { Constructor } from "./base";
 import { InjectableToken, ImplementToken, BonbonsDeptFactory, ImplementDIValue } from "./injectable";
 import { BonbonsPipeEntry } from "./pipe";
 export { BonbonsPipeEntry };
@@ -11,7 +11,8 @@ export declare type BonbonsKOAMiddleware = MiddlewaresFactory | KOAMiddlewareTup
     factory: MiddlewaresFactory;
     params: any[];
 };
-export declare type InjectableServiceType = IConstructor<any> | [InjectableToken<any>, ImplementDIValue<any>] | BonbonsInjectEntry<any>;
+export declare type OptionTuple<K = any> = [BonbonsToken<K>, Partial<K>];
+export declare type InjectableServiceType = Constructor<any> | [InjectableToken<any>, ImplementDIValue<any>] | BonbonsInjectEntry<any>;
 /**
  * The inject-entry for injectable service in @BonbonsApp(...)
  * @description
@@ -56,10 +57,10 @@ export interface BonbonsServerConfig {
      * * controller set here must describled by @Controller(...), or an error will throw.
      *
      * @description
-     * @type {IConstructor<any>[]}
+     * @type {Constructor<any>[]}
      * @memberof BonbonsServerConfig
      */
-    controller?: IConstructor<any>[];
+    controller?: Constructor<any>[];
     /**
      * Koa middleware factories
      * ---
@@ -120,7 +121,7 @@ export interface BonbonsServerConfig {
      * })
      * ```
      * @description
-     * @type {(Array<(IConstructor<any> | [InjectableToken<any>, ImplementDIValue<any>] | BonbonsInjectEntry<any>)>)}
+     * @type {(Array<(Constructor<any> | [InjectableToken<any>, ImplementDIValue<any>] | BonbonsInjectEntry<any>)>)}
      * @memberof BonbonsServerConfig
      */
     scoped?: Array<InjectableServiceType>;
@@ -172,7 +173,7 @@ export interface BonbonsServerConfig {
      * })
      * ```
      * @description
-     * @type {(Array<(IConstructor<any> | [InjectableToken<any>, ImplementDIValue<any>] | BonbonsInjectEntry<any>)>)}
+     * @type {(Array<(Constructor<any> | [InjectableToken<any>, ImplementDIValue<any>] | BonbonsInjectEntry<any>)>)}
      * @memberof BonbonsServerConfig
      */
     singleton?: Array<InjectableServiceType>;
@@ -195,19 +196,19 @@ export interface BonbonsServerConfig {
      * @type {(Array<(BonbonsEntry<any> | [BonbonsToken<any>, any])>)}
      * @memberof BonbonsServerConfig
      */
-    options?: Array<(BonbonsEntry<any> | [BonbonsToken<any>, any])>;
+    options?: Array<(BonbonsEntry<any> | OptionTuple)>;
 }
 export interface IBonbonsServer {
     use(mfac: MiddlewaresFactory, ...pars: any[]): IBonbonsServer;
     pipe(pipe: BonbonsPipeEntry): IBonbonsServer;
     option<T>(entry: BonbonsEntry<T>): IBonbonsServer;
     option<T>(token: BonbonsToken<T>, value: T): IBonbonsServer;
-    controller<T>(ctlr: IConstructor<T>): IBonbonsServer;
-    scoped<T>(srv: IConstructor<T>): IBonbonsServer;
+    controller<T>(ctlr: Constructor<T>): IBonbonsServer;
+    scoped<T>(srv: Constructor<T>): IBonbonsServer;
     scoped<T, M>(token: InjectableToken<T>, srv: ImplementToken<M>): IBonbonsServer;
     scoped<T, M>(token: InjectableToken<T>, srv: BonbonsDeptFactory<M>): IBonbonsServer;
     scoped<T, M>(token: InjectableToken<T>, srv: M): IBonbonsServer;
-    singleton<T>(srv: IConstructor<T>): IBonbonsServer;
+    singleton<T>(srv: Constructor<T>): IBonbonsServer;
     singleton<T, M>(token: InjectableToken<T>, srv: ImplementToken<M>): IBonbonsServer;
     singleton<T, M>(token: InjectableToken<T>, srv: BonbonsDeptFactory<M>): IBonbonsServer;
     singleton<T, M>(token: InjectableToken<T>, srv: M): IBonbonsServer;

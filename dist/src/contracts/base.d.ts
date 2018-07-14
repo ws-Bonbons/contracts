@@ -8,18 +8,18 @@ export interface IENV {
 export interface IDepolyENV {
     port?: number;
 }
-export interface IConstructor<T> {
+export interface Constructor<T> {
     new (...args: any[]): T;
 }
 export interface IStaticTypedResolver {
     /** Convert static typed instance to JSON text */
     ToJSON(obj: any, format?: boolean): string;
     /** Convert JSON text to static typed instance */
-    FromJSON<T>(json: string, type?: IConstructor<T>): T;
+    FromJSON<T>(json: string, type?: Constructor<T>): T;
     /** Convert static typed instance to javascript object */
     ToObject(obj: any, format?: boolean): any;
     /** Convert javascript object to static typed instance */
-    FromObject<T>(json: any, type?: IConstructor<T>): T;
+    FromObject<T>(json: any, type?: Constructor<T>): T;
 }
 export declare enum FormType {
     MultipleFormData = "multiple",

@@ -1,4 +1,4 @@
-import { Async, IConstructor, IBonbonsContext } from "./base";
+import { Async, Constructor, IBonbonsContext } from "./base";
 export declare type PipeParamType = string | number | boolean;
 export declare type PipeArrayParams = Array<PipeParamType>;
 export interface PipeMapParams {
@@ -45,7 +45,7 @@ export interface PipeOnInit {
     pipeOnInit(): void;
 }
 export interface IPipeFactory<T> {
-    (): IConstructor<IPipe<T>>;
+    (): Constructor<IPipe<T>>;
 }
 /**
  * Pipe bundle
@@ -60,6 +60,6 @@ export interface IPipeFactory<T> {
  */
 export interface IPipeBundle<T> {
     params: T;
-    target: IConstructor<IPipe<T>>;
+    target: Constructor<IPipe<T>>;
 }
-export declare type BonbonsPipeEntry<T = any> = IPipeBundle<T> | IConstructor<IPipe<any>>;
+export declare type BonbonsPipeEntry<T = any> = IPipeBundle<T> | Constructor<IPipe<any>>;
