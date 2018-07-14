@@ -1,8 +1,8 @@
 import { Constructor } from "./base";
 
 export enum InjectScope {
-  Singleton = "__singleton",
-  Scoped = "__scoped"
+  Singleton = "SINGLETON_INJECTION",
+  Scoped = "SCOPED_INJECTION"
 }
 
 export interface IBonbonsInjectable {
