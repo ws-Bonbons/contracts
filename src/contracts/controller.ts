@@ -45,7 +45,7 @@ export interface IBonbonsController {
   getConfig?(): IBonbonsControllerMetadata;
 }
 
-export type IController = Constructor<IBonbonsController>;
+export type IController<T extends IBonbonsController = any> = Constructor<IBonbonsController>;
 
 export interface IMethodResult {
   type?: string;

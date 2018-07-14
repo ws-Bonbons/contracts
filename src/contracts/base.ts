@@ -11,6 +11,7 @@ export interface IDepolyENV {
 
 export interface Constructor<T> {
   new(...args: any[]): T;
+  prototype: T;
 }
 
 export interface IStaticTypedResolver {

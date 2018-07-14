@@ -2,14 +2,15 @@
 /// <reference types="koa-bodyparser" />
 import { KOARequest, KOAResponse } from "./source";
 export interface IENV {
-    mode?: "development" | "production";
-    trace?: boolean;
+    mode: "development" | "production";
+    trace: boolean;
 }
 export interface IDepolyENV {
-    port?: number;
+    port: number;
 }
 export interface Constructor<T> {
     new (...args: any[]): T;
+    prototype: T;
 }
 export interface IStaticTypedResolver {
     /** Convert static typed instance to JSON text */

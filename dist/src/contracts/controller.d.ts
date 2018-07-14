@@ -45,7 +45,7 @@ export interface IBonbonsController {
     __valid?: boolean;
     getConfig?(): IBonbonsControllerMetadata;
 }
-export declare type IController = Constructor<IBonbonsController>;
+export declare type IController<T extends IBonbonsController = any> = Constructor<IBonbonsController>;
 export interface IMethodResult {
     type?: string;
     toString(configs: ConfigsCollection): string | Promise<string>;
