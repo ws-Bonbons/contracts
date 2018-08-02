@@ -1,4 +1,4 @@
-import { Constructor, AbstractType } from "./base";
+import { Constructor, AbstractType, ScopeID } from "./base";
 
 /**
  * 描述了依赖项在整个容器中的生命周期情况
@@ -35,7 +35,7 @@ export type ImplementToken<T> = ImplementType<T>;
 export type IInjectable = Constructor<IBonbonsInjectable>;
 
 /** 依赖注入项工长 */
-export type ImplementFactory<T> = () => T;
+export type ImplementFactory<T> = (scopeId?: ScopeID) => T;
 export type BonbonsDeptFactory<T> = ImplementFactory<T>;
 
 export type InjectDIToken<T = any> = Constructor<T> | AbstractType<T>;
