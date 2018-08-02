@@ -19,7 +19,7 @@ export interface PipeMapParams {
 export interface IPipe<T = any> {
   params: T;
   context: IBonbonsContext;
-  process(next?: () => Async<any>): Async<void> | void;
+  process(): Async<void> | void;
 }
 
 export interface IBonbonsPipeMetadata {
