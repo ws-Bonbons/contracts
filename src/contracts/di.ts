@@ -26,13 +26,13 @@ export interface BonbonsDIEntry {
 }
 
 export interface ReadonlyDIContainer {
-  get<T>(token: InjectToken<T>): T;
+  get<T>(token: InjectToken<T>, scopeId?: ScopeID): T;
 }
 
 export interface BonbonsDIContainer extends ReadonlyDIContainer {
   count: number;
   register<K, V>(token: InjectToken<K>, imp: Implement<V>, scope: InjectScope);
-  getDepedencies<T>(depts: InjectToken[]): any[];
+  getDepedencies<T>(depts: InjectToken[], scopeId?: ScopeID): any[];
   getConfig(): any;
   complete(): void;
 }
