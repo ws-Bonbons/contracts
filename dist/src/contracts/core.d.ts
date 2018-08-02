@@ -73,6 +73,7 @@ export interface BonbonsServerConfig {
      */
     middlewares?: BonbonsKOAMiddleware[];
     pipes?: BonbonsPipeEntry[];
+    renews?: Array<InjectableServiceType>;
     /**
      * Scoped services
      * ---
@@ -204,6 +205,10 @@ export interface IBonbonsServer {
     option<T>(entry: BonbonsEntry<T>): IBonbonsServer;
     option<T>(token: BonbonsToken<T>, value: T): IBonbonsServer;
     controller<T>(ctlr: Constructor<T>): IBonbonsServer;
+    renew<T>(srv: Constructor<T>): IBonbonsServer;
+    renew<T, M>(token: InjectableToken<T>, srv: ImplementToken<M>): IBonbonsServer;
+    renew<T, M>(token: InjectableToken<T>, srv: BonbonsDeptFactory<M>): IBonbonsServer;
+    renew<T, M>(token: InjectableToken<T>, srv: M): IBonbonsServer;
     scoped<T>(srv: Constructor<T>): IBonbonsServer;
     scoped<T, M>(token: InjectableToken<T>, srv: ImplementToken<M>): IBonbonsServer;
     scoped<T, M>(token: InjectableToken<T>, srv: BonbonsDeptFactory<M>): IBonbonsServer;
