@@ -14,6 +14,19 @@ export interface Constructor<T> {
   prototype: T;
 }
 
+export interface AbstractType<T> {
+  prototype: T;
+}
+
+/** 用来区分范围的id，范围注入依赖于这个id来实现 */
+export type ScopeID = string | Symbol;
+
+/** 描述一个类型的变量一定不为undefined */
+export type Exist<T> = Exclude<T, undefined>;
+
+/** 描述一个必不为undefined的变量是可能为null的 */
+export type Nullable<T> = Exist<T> | null;
+
 export interface IStaticTypedResolver {
   /** Convert static typed instance to JSON text */
   ToJSON(obj: any, format?: boolean): string;
