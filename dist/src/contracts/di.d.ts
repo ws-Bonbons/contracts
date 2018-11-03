@@ -27,6 +27,7 @@ export interface BonbonsDIContainer extends ReadonlyDIContainer {
     getDepedencies<T>(depts: InjectToken[], scopeId?: ScopeID): any[];
     getConfig(): any;
     complete(): void;
+    dispose(scopeId?: ScopeID): void;
 }
 /**
  * 在依赖注入容器内部正常运作所需要提供的entry信息
