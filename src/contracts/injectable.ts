@@ -35,7 +35,7 @@ export type ImplementToken<T> = ImplementType<T>;
 export type IInjectable = Constructor<IBonbonsInjectable>;
 
 /** 依赖注入项工长 */
-export type ImplementFactory<T> = (scopeId?: ScopeID) => T;
+export type ImplementFactory<T> = (scopeId?: ScopeID, scopeData?: any) => T;
 export type BonbonsDeptFactory<T> = ImplementFactory<T>;
 
 export type InjectDIToken<T = any> = Constructor<T> | AbstractType<T>;
