@@ -3,6 +3,7 @@
 // export * from "./contracts/di";
 // export * from "./contracts/injectable";
 export * from "./contracts/options";
+export * from "./contracts/http";
 // export * from "./contracts/pipe";
 // export * from "./contracts/reflect";
 // export * from "./contracts/source";
