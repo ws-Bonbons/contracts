@@ -5,14 +5,10 @@ export interface PipeMapParams {
     "@params"?: PipeMapParams;
     [key: string]: any;
 }
-export interface PipeProcessContinueResult {
-    breakOut: false;
-}
-export interface PipeProcessBreakResult {
-    breakOut: true;
+export declare type PipeProcessResult = {
+    breakOut: boolean;
     error?: Error;
-}
-export declare type PipeProcessResult = (PipeProcessContinueResult | PipeProcessBreakResult) | void;
+} | void;
 /**
  * Bonbons pipe struct
  * ---
