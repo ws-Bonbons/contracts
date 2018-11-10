@@ -7,6 +7,17 @@ export interface PipeMapParams {
   [key: string]: any;
 }
 
+export interface PipeProcessContinueResult {
+  breakOut: false;
+}
+
+export interface PipeProcessBreakResult {
+  breakOut: true;
+  error?: Error;
+}
+
+export type PipeProcessResult = (PipeProcessContinueResult | PipeProcessBreakResult) | void;
+
 /**
  * Bonbons pipe struct
  * ---
@@ -19,7 +30,7 @@ export interface PipeMapParams {
 export interface IPipe<T = any> {
   params: T;
   context: IBonbonsContext;
-  process(): Async<void> | void;
+  process(): Async<PipeProcessResult> | PipeProcessResult;
 }
 
 export interface IBonbonsPipeMetadata {
