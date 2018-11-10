@@ -24,7 +24,7 @@ export type PipeProcessResult = {
 export interface IPipe<T = any> {
   params: T;
   context: IBonbonsContext;
-  process(): Async<PipeProcessResult> | PipeProcessResult;
+  process(): Async<PipeProcessResult>;
 }
 
 export interface IBonbonsPipeMetadata {

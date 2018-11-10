@@ -39,7 +39,7 @@ export declare enum FormType {
     TextPlain = "text",
     Raw = "raw"
 }
-export declare type Async<T> = Promise<T>;
+export declare type Async<T> = Promise<T> | T;
 export interface IBonbonsContext {
     request: KOARequest;
     response: KOAResponse;
