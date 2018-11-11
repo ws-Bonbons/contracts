@@ -10,12 +10,13 @@ export * from "./contracts/http";
 // export * from "./contracts/base";
 
 import { PipeOnInit } from "./contracts/pipe";
-import { IStaticTypedResolver, Constructor, Async } from "./contracts/base";
+import { IStaticTypedResolver, IStaticSerializeOptions, Constructor, Async } from "./contracts/base";
 import { IMethodResult } from "./contracts/controller";
 
 export {
   PipeOnInit,
   IStaticTypedResolver,
+  IStaticSerializeOptions,
   Async as Thenable,
   Async,
   Constructor,

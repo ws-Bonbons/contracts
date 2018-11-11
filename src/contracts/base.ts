@@ -27,15 +27,20 @@ export type Exist<T> = Exclude<T, undefined>;
 /** 描述一个必不为undefined的变量是可能为null的 */
 export type Nullable<T> = Exist<T> | null;
 
+export interface IStaticSerializeOptions<T> {
+  format: boolean;
+  type: Constructor<T>;
+}
+
 export interface IStaticTypedResolver {
   /** Convert static typed instance to JSON text */
-  ToJSON(obj: any, format?: boolean): string;
+  ToJSON<T = any>(obj: any, options?: boolean | Partial<IStaticSerializeOptions<T>>): string;
   /** Convert JSON text to static typed instance */
-  FromJSON<T>(json: string, type?: Constructor<T>): T;
+  FromJSON<T = any>(json: string, type?: Constructor<T>): T;
   /** Convert static typed instance to javascript object */
-  ToObject(obj: any, format?: boolean): any;
+  ToObject<T = any>(obj: any, options?: boolean | Partial<IStaticSerializeOptions<T>>): any;
   /** Convert javascript object to static typed instance */
-  FromObject<T>(json: any, type?: Constructor<T>): T;
+  FromObject<T = any>(json: any, type?: Constructor<T>): T;
 }
 
 export enum FormType {
